@@ -46,6 +46,57 @@ Pauses the execution of the current function until the provided function `testCo
 })()
 ```
 
+#### SeleniumEngine.waitForElementPresent(cssSelector, timeout_ms)
+Pauses the execution of the current function until an element matching the provided CSS selector is found. If it isn't found before `timeout_ms` an exception is thrown
+
+```javascript
+window.setTimeout(() => {
+    let test_element = document.createElement("span");
+    test_element.id = "test";
+    
+    document.body.appendChild(test_element);
+}, 5000);
+
+(async () => {
+    console.log("Operation 1");
+    
+    // Pause function for 5 seconds, then continues
+    await SeleniumEngine.waitForElementPresent("#test", 8000)
+
+    console.log("Operation 2");
+})()
+```
+
+#### SeleniumEngine.waitForElementNotPresent(cssSelector, timeout_ms)
+Pauses the execution of the current function until an element matching the provided CSS selector is no longer found
+
+```javascript
+// Example initialization
+(() => {
+    // First we create the test element
+    let test_element = document.createElement("span");
+    test_element.id = "test";
+
+    document.body.appendChild(test_element);
+
+    // Then after 5 seconds we remove it
+    window.setTimeout(() => {
+        document.getElementById("test").remove()
+    }, 5000);
+})()
+
+
+// Actual example
+(async () => {
+    console.log("Operation 1");
+    
+    // Pause function for 5 seconds, then continues
+    await SeleniumEngine.waitForElementNotPresent("#test", 8000)
+
+    console.log("Operation 2");
+})()
+```
+
 #### SeleniumEngine.sleep(ms)
 Pauses the execution of the current function for the number of milliseconds passed as parameter.
 
