@@ -1,9 +1,21 @@
 # SeleniumEngineJS
-Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically
+Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically.
+
+## Introduction 
+This little script written in vanilla JS tries to **emulate** some of the **Selenium** most useful features, such as the _Expected Conditions_. It was originally written to be included into _Tampermonkey/Greasemonkey scripts_ to bring the power of selenium into user scripts and be able to automate even **Single Page Applications** (where usually content and elements are loaded dynamically and URLs don't change, making automation really hard).
+
+The script itself uses [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) but the real deal is the use of [**async/await**](https://javascript.info/async-await) in your code to chain Promises in a cleaner way so that async code **looks** as if it was syncronous (but IT IS NOT, don't get confused). 
+
+As of October 2020, async/await keywords are [supported everywhere EXCEPT Internet Explorer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function#Browser_compatibility), which does not even support Promises thus making this script completely useless (but i think almost nobody is still using it :smile:). 
+
+Even **without** async/await you could still chain the operations by using `Promise.then()`, but it is just another way of going down the good old [callback hell](http://callbackhell.com/) :worried:.
+
+All the code MUST be used inside an async function 
 
 ## Methods
 #### SeleniumEngine.waitUntil(testCondition, timeout_ms)
 Pauses the execution of the current function until the provided function `testCondition` is truthy (the function is executed every 1000 ms). Throws an error if wait time exceeds `timeout_ms` (default is _30000_).
+
 ```javascript
 (async () => {
     console.log("Operation 1");
@@ -35,7 +47,8 @@ Pauses the execution of the current function until the provided function `testCo
 ```
 
 #### SeleniumEngine.sleep(ms)
-Pauses the execution of the current function for the number of milliseconds passed as parameter
+Pauses the execution of the current function for the number of milliseconds passed as parameter.
+
 ```javascript
 (async () => {
     console.log("Operation 1");
