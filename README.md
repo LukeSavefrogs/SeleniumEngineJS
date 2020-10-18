@@ -14,7 +14,7 @@ All the code MUST be used inside an async function
 
 ## Methods
 #### SeleniumEngine.waitUntil(testCondition, timeout_ms)
-Pauses the execution of the current function until the provided function `testCondition` is truthy (the function is executed every 1000 ms). Throws an error if wait time exceeds `timeout_ms` (default is _30000_).
+Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewaitforelementpresentcssselector-timeout_ms) and [`SeleniumEngine.waitForElementNotPresent()`](#seleniumenginewaitforelementnotpresentcssselector-timeout_ms). Pauses the execution of the current function until the provided function `testCondition` is truthy (the function is executed every 1000 ms). Throws an error if wait time exceeds `timeout_ms` (default is _30000_).
 
 ```javascript
 (async () => {
