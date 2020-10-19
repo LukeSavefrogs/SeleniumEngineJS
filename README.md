@@ -10,7 +10,20 @@ As of October 2020, async/await keywords are [supported everywhere EXCEPT Intern
 
 Even **without** async/await you could still chain the operations by using `Promise.then()`, but it is just another way of going down the good old [callback hell](http://callbackhell.com/) :worried:.
 
-All the code MUST be used inside an async function 
+## How to use
+- Simply **copy and paste** the code into yours and use :smile:
+- **Include** directly the file (so that updates will be reflected on your code):
+    - _Javascript_: 
+      ```javascript
+      fetch("https://raw.githubusercontent.com/LukeSavefrogs/SeleniumEngineJS/main/src/SeleniumEngine.js").then(data => data.text()).then(body => eval(body))
+      ```
+    - _HTML_:
+      ```html
+        <script type="text/javascript" src="https://raw.githubusercontent.com/LukeSavefrogs/SeleniumEngineJS/main/src/SeleniumEngine.js"></script>
+      ```
+
+> ### Important
+> All the methods MUST be used inside an **async function**, as for the examples below
 
 ## Methods
 #### SeleniumEngine.waitUntil(testCondition, timeout_ms)
