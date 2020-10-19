@@ -1,0 +1,29 @@
+{
+  "name": "seleniumenginejs",
+  "version": "1.0.0",
+  "description": "Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically.",
+  "main": "src/SeleniumEngine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeSavefrogs/SeleniumEngineJS.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "selenium",
+    "automation",
+    "spa"
+  ],
+  "author": "Luca Salvarani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LukeSavefrogs/SeleniumEngineJS/issues"
+  },
+  "homepage": "https://github.com/LukeSavefrogs/SeleniumEngineJS#readme",
+  "dependencies": {
+    "np": "^6.5.0"
+  }
+}
