@@ -4,7 +4,7 @@
   "description": "Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically.",
   "main": "src/SeleniumEngine.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Warning: No test specified\""
   },
   "repository": {
     "type": "git",
