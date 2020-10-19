@@ -27,7 +27,9 @@ Even **without** async/await you could still chain the operations by using `Prom
 
 ## Methods
 #### SeleniumEngine.waitUntil(testCondition, timeout_ms)
-Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewaitforelementpresentcssselector-timeout_ms) and [`SeleniumEngine.waitForElementNotPresent()`](#seleniumenginewaitforelementnotpresentcssselector-timeout_ms). Pauses the execution of the current function until the provided function `testCondition` is truthy (the function is executed every 1000 ms). Throws an error if wait time exceeds `timeout_ms` (default is _30000_).
+Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewaitforelementpresentcssselector-timeout_ms) and [`SeleniumEngine.waitForElementNotPresent()`](#seleniumenginewaitforelementnotpresentcssselector-timeout_ms). **Pauses** the execution of the current function until the provided function `testCondition` is **truthy** (the function is executed every 1000 ms). 
+
+**Throws** an error if wait time exceeds `timeout_ms` (default is _30000_).
 
 ```javascript
 (async () => {
@@ -60,7 +62,9 @@ Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewai
 ```
 
 #### SeleniumEngine.waitForElementPresent(cssSelector, timeout_ms)
-Pauses the execution of the current function until an element matching the provided CSS selector is found. If it isn't found before `timeout_ms` an exception is thrown
+**Pauses** the execution of the current function until an **element** matching the provided CSS selector is **found**. 
+
+**Throws** an exception if it isn't found before `timeout_ms` ms
 
 ```javascript
 window.setTimeout(() => {
@@ -81,7 +85,9 @@ window.setTimeout(() => {
 ```
 
 #### SeleniumEngine.waitForElementNotPresent(cssSelector, timeout_ms)
-Pauses the execution of the current function until an element matching the provided CSS selector is no longer found
+**Pauses** the execution of the current function until an **element** matching the provided CSS selector is **no longer found**
+
+**Throws** an exception if it isn't found before `timeout_ms` ms
 
 ```javascript
 // Example initialization
@@ -111,7 +117,7 @@ Pauses the execution of the current function until an element matching the provi
 ```
 
 #### SeleniumEngine.sleep(ms)
-Pauses the execution of the current function for the number of milliseconds passed as parameter.
+**Pauses** the execution of the current function for the number of **milliseconds** passed as parameter.
 
 ```javascript
 (async () => {
