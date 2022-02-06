@@ -35,36 +35,30 @@
 
 			return new Promise((resolve, reject) => {
 				let timer = window.setInterval(() => {
-				let elapsed_time = parseInt(performance.now() - start_ts);
+					let elapsed_time = parseInt(performance.now() - start_ts);
 
-				// Se il timeout è un numero
-				if (
-					!!timeout_ms &&
-					!isNaN(timeout_ms) &&
-					timeout_ms > 0 &&
-					elapsed_time >= timeout_ms
-				) {
-					clearInterval(timer);
-					reject(
-						"Timeout of " +
-						timeout_ms +
-						"ms exceeded (" +
-						elapsed_time +
-						" real)"
-					);
-				}
+					// Se il timeout è un numero
+					if (
+						!!timeout_ms &&
+						!isNaN(timeout_ms) &&
+						timeout_ms > 0 &&
+						elapsed_time >= timeout_ms
+					) {
+						clearInterval(timer);
+						reject(
+							`Timeout of ${timeout_ms} ms exceeded (${elapsed_time} real)`
+						);
+					}
 
-				if (testCondition()) {
-					clearInterval(timer);
-					resolve({
-						msg:
-							"The specified condition was met before the " +
-							timeout_ms +
-							" ms timeout",
-						time: elapsed_time,
-						given_timeout: timeout_ms,
-					});
-				}
+					if (testCondition()) {
+						clearInterval(timer);
+						resolve({
+							msg:
+								`The specified condition was met before the ${timeout_ms} ms timeout`,
+							time: elapsed_time,
+							given_timeout: timeout_ms,
+						});
+					}
 				}, 1000);
 			});
 		},
@@ -81,16 +75,16 @@
 			if (!cssSelector) throw new Error("Please specify a css selector");
 
 			/* 
-						Può anche essere definito così:
-							return this.waitUntil(() => !!document.querySelector(cssSelector), timeout_ms);
-						
-						Ritorno il valore di un'altra Promise per poter customizzare meglio le risposte
-					*/
+				Può anche essere definito così:
+					return this.waitUntil(() => !!document.querySelector(cssSelector), timeout_ms);
+				
+				Ritorno il valore di un'altra Promise per poter customizzare meglio le risposte
+			*/
 			return new Promise((resolve, reject) => {
 				this.waitUntil(() => !!document.querySelector(cssSelector), timeout_ms)
 				.then((result) =>
 					resolve({
-						msg: "Element with selector " + cssSelector + " is present",
+						msg: `Element with selector ${cssSelector} is present`,
 						time: result.time,
 					})
 				)
@@ -113,13 +107,13 @@
 				this.waitUntil(() => !document.querySelector(cssSelector), timeout_ms)
 				.then((result) =>
 					resolve({
-						msg: "Element with selector " + cssSelector + " is not present",
+						msg: `Element with selector ${cssSelector} is not present`,
 						time: result.time,
 					})
 				)
 				.catch((result) => reject(result));
 			});
 		},
-		sleep: (ms = 0) => new Promise((res) => setTimeout(res, ms)),
+		sleep: (ms  = 0) => new Promise((res) => setTimeout(res, ms)),
 	};
 })(window);
