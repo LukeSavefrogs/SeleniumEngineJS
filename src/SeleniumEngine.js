@@ -26,11 +26,17 @@
 	*
 	*
 	*
-	* 	Dalla versione 2.4 viene esportata nello scope globale in modo che possa essere usata anche nella Developer Console
 	*   --------------------------------------------------------------------------------------------------------
 	*/
 	window.SeleniumEngine = {
-		waitUntil: function (testCondition, timeout_ms = 30000) {
+		/**
+		 * 
+		 * @param {Function} testCondition 
+		 * @param {Number} timeout_ms 
+		 * @param {Number} checkInterval_ms 
+		 * @returns 
+		 */
+		waitUntil: function (testCondition, timeout_ms = 30000, checkInterval_ms = 1000) {
 			let start_ts = performance.now();
 
 			return new Promise((resolve, reject) => {
@@ -59,9 +65,10 @@
 							given_timeout: timeout_ms,
 						});
 					}
-				}, 1000);
+				}, checkInterval_ms);
 			});
 		},
+
 		/**
 		 *
 		 * @param {String} cssSelector The css selector for the element
@@ -91,6 +98,7 @@
 				.catch((result) => reject(result));
 			});
 		},
+
 		/**
 		 *
 		 * @param {String} cssSelector The css selector for the element
@@ -114,6 +122,12 @@
 				.catch((result) => reject(result));
 			});
 		},
-		sleep: (ms  = 0) => new Promise((res) => setTimeout(res, ms)),
+
+		/**
+		 * 
+		 * @param {Number} ms Time to wait (expressed in milliseconds)
+		 * @returns Promise
+		 */
+		sleep: (ms = 0) => new Promise(res => setTimeout(res, ms)),
 	};
 })(window);
