@@ -1,6 +1,6 @@
 {
   "name": "seleniumenginejs",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically.",
   "type": "module",
   "main": "./src/SeleniumEngine.cjs",
@@ -29,8 +29,7 @@
     "url": "https://github.com/LukeSavefrogs/SeleniumEngineJS/issues"
   },
   "homepage": "https://github.com/LukeSavefrogs/SeleniumEngineJS#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "np": "^6.5.0",
     "ava": "^4.0.1",
