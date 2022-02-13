@@ -6,7 +6,7 @@
   "main": "./src/SeleniumEngine.cjs",
   "exports": {
     "require": "./src/SeleniumEngine.cjs",
-    "import": "./esm/wrapper.mjs"
+    "import": "./src/esm/wrapper.mjs"
   },
   "scripts": {
     "release": "np",
