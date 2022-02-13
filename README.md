@@ -1,3 +1,5 @@
+[![GitHub release](https://img.shields.io/github/release/LukeSavefrogs/SeleniumEngineJS.svg)](https://GitHub.com/LukeSavefrogs/SeleniumEngineJS/releases/)
+
 # SeleniumEngineJS
 Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically.
 
@@ -12,15 +14,32 @@ Even **without** async/await you could still chain the operations by using `Prom
 
 ## How to use
 - Simply **copy and paste** the code into yours and use :smile:
+- Use a **CDN**:
+  - [JSDelivr](https://www.jsdelivr.com/package/npm/selenium-engine-js)
+	```html
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/selenium-engine-js/src/SeleniumEngine.cjs"></script>
+	```
+
+  - [UnPkg](https://unpkg.com/selenium-engine-js/src/SeleniumEngine.cjs)
+	```html
+	<script type="text/javascript" src="https://unpkg.com/selenium-engine-js/src/SeleniumEngine.cjs"></script>
+	```
+
 - **Include** directly the file (so that updates will be reflected on your code):
-    - _Javascript_: 
-      ```javascript
-      fetch("https://raw.githubusercontent.com/LukeSavefrogs/SeleniumEngineJS/main/src/SeleniumEngine.js").then(data => data.text()).then(body => eval(body))
-      ```
-    - _HTML_:
-      ```html
-        <script type="text/javascript" src="https://raw.githubusercontent.com/LukeSavefrogs/SeleniumEngineJS/main/src/SeleniumEngine.js"></script>
-      ```
+    - _Javascript_ (eval): 
+	```javascript
+	fetch("https://raw.githubusercontent.com/LukeSavefrogs/SeleniumEngineJS/main/src/SeleniumEngine.cjs").then(data => data.text()).then(body => eval(body))
+	```
+    -  NodeJS (CJS)
+	```javascript
+	const SeleniumEngine = require("SeleniumEngine");
+	```
+
+    -  NodeJS (ESModules):
+	```javascript
+	import SeleniumEngine from "SeleniumEngineJS";
+	```
+
 
 > ### Important
 > All the methods MUST be used inside an **async function**, as for the examples below
