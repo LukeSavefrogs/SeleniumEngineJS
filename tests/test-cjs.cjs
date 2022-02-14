@@ -1,6 +1,6 @@
 const test = require('ava');
 
-const SeleniumEngine = require("../src/SeleniumEngine.cjs");
+const SeleniumEngine = require("../src/SeleniumEngine.js");
 
 test("Waits for 2 seconds between the two operations", async t => {
 	// console.log(`[${(new Date()).toISOString()}] Operation 1`);
