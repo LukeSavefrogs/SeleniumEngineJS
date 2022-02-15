@@ -39,7 +39,7 @@ const SeleniumEngine = {
 		let start_ts = new Date().getTime();
 
 		return new Promise((resolve, reject) => {
-			let timer = window.setInterval(() => {
+			let timer = setInterval(() => {
 				let elapsed_time = parseInt(new Date().getTime() - start_ts);
 
 				// Se il timeout è un numero
