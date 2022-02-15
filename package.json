@@ -1,6 +1,6 @@
 {
   "name": "selenium-engine-js",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically.",
   "type": "commonjs",
   "main": "./src/SeleniumEngine.js",
