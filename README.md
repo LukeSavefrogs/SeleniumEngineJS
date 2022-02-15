@@ -86,12 +86,14 @@ Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewai
     
 	
     // Example 3 - Will wait forever, because timeout is disabled and the expected condition is NEVER met
-    await SeleniumEngine.waitUntil(() => false, 0);
+    console.warn("The next expression will wait forever, because timeout is disabled")
+	await SeleniumEngine.waitUntil(() => false, 0);
 
 
     console.log("Operation 2");
 })()
 ```
+[*See it live*](https://runkit.com/lukesavefrogs/selenium-engine-js-waituntil)
 
 
 #### `SeleniumEngine.waitForElementPresent(cssSelector, timeout_ms)`
