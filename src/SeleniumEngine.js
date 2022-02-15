@@ -36,11 +36,11 @@ const SeleniumEngine = {
 	 * @returns 
 	 */
 	waitUntil: function (testCondition, timeout_ms = 30000, checkInterval_ms = 1000) {
-		let start_ts = performance.now();
+		let start_ts = new Date().getTime();
 
 		return new Promise((resolve, reject) => {
 			let timer = window.setInterval(() => {
-				let elapsed_time = parseInt(performance.now() - start_ts);
+				let elapsed_time = parseInt(new Date().getTime() - start_ts);
 
 				// Se il timeout è un numero
 				if (
