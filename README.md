@@ -93,6 +93,7 @@ Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewai
 })()
 ```
 
+
 #### `SeleniumEngine.waitForElementPresent(cssSelector, timeout_ms)`
 **Pauses** the execution of the current function until an **element** matching the provided CSS selector is **found**. 
 
@@ -118,6 +119,7 @@ window.setTimeout(() => {
     console.log("Operation 2");
 })()
 ```
+
 
 #### `SeleniumEngine.waitForElementNotPresent(cssSelector, timeout_ms)`
 **Pauses** the execution of the current function until an **element** matching the provided CSS selector is **no longer found**
@@ -149,6 +151,7 @@ window.setTimeout(() => {
 })()
 ```
 
+
 #### `SeleniumEngine.sleep(ms)`
 **Pauses** the execution of the current function for the number of **milliseconds** passed as parameter.
 
@@ -162,3 +165,5 @@ window.setTimeout(() => {
     console.log("Operation 2");
 })()
 ```
+
+[*See it live*](https://runkit.com/lukesavefrogs/selenium-engine-js-sleep)
