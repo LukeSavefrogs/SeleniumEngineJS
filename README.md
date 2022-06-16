@@ -1,4 +1,4 @@
-[![GitHub release](https://img.shields.io/github/release/LukeSavefrogs/SeleniumEngineJS.svg)](https://GitHub.com/LukeSavefrogs/SeleniumEngineJS/releases/)
+[![GitHub release](https://img.shields.io/github/release/LukeSavefrogs/SeleniumEngineJS.svg)](https://GitHub.com/LukeSavefrogs/SeleniumEngineJS/releases/) [![JSDeliver hits](https://data.jsdelivr.com/v1/package/npm/selenium-engine-js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/selenium-engine-js)
 
 # SeleniumEngineJS
 Selenium-like methods useful for automating SPAs (Single Page Application) where content is changed dynamically.
