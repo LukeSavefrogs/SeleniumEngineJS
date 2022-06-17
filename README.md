@@ -72,29 +72,29 @@ Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewai
 ```javascript
 (async () => {
     console.log("Operation 1");
-    
-	try {
-		let test_switch = false;
-		window.setTimeout(() => { test_switch = true}, 4500);
+
+    try {
+        let test_switch = false;
+        window.setTimeout(() => { test_switch = true}, 4500);
 
 
-	// Example 1 - Returns after the variable `test_switch` has become true
-		let resp = await SeleniumEngine.waitUntil(() => test_switch == true)
-		console.log("Now we can continue with the example. We have waited for %d ms", resp.time)
+        // Example 1 - Returns after the variable `test_switch` has become true
+        let resp = await SeleniumEngine.waitUntil(() => test_switch == true)
+        console.log("Now we can continue with the example. We have waited for %d ms", resp.time)
 
 
-	// Example 2 - Throws an error like `Timeout of 30000ms exceeded (30016 real)`
-		await SeleniumEngine.waitUntil(() => false)
-		console.log("This won't be executed")
+        // Example 2 - Throws an error like `Timeout of 30000ms exceeded (30016 real)`
+        await SeleniumEngine.waitUntil(() => false)
+        console.log("This won't be executed")
 
-	} catch (err) {
-		console.log("As expected, the second example has returned an exception: %o", err)
-	}
+    } catch (err) {
+        console.log("As expected, the second example has returned an exception: %o", err)
+    }
 
-	
+
     // Example 3 - Will wait forever, because timeout is disabled and the expected condition is NEVER met
     console.warn("The next expression will wait forever, because timeout is disabled")
-	await SeleniumEngine.waitUntil(() => false, 0);
+    await SeleniumEngine.waitUntil(() => false, 0);
 
 
     console.log("Operation 2");
