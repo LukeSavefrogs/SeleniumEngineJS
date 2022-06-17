@@ -54,10 +54,10 @@ const SeleniumEngine = require("selenium-engine-js");
 import SeleniumEngine from "selenium-engine-js";
 ```
 
+## Methods
 > ### Important
 > All the methods MUST be used inside an **`async`** function, as for the examples below (or using `Promise.then()`, which, again, is discouraged since it kinda destroys the whole concept behind this project).
 
-## Methods
 #### `SeleniumEngine.waitUntil(testCondition, timeout_ms, checkInterval_ms)`
 Used internally by [`SeleniumEngine.waitForElementPresent()`](#seleniumenginewaitforelementpresentcssselector-timeout_ms) and [`SeleniumEngine.waitForElementNotPresent()`](#seleniumenginewaitforelementnotpresentcssselector-timeout_ms). **Pauses** the execution of the current function until the provided function `testCondition` is **truthy** (the function is executed every `checkInterval_ms` ms, default is _1000_). 
 
