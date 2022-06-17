@@ -14,44 +14,45 @@ As of February 2022, async/await keywords are [supported everywhere EXCEPT Inter
 Even **without** async/await you could still chain the operations by using `Promise.then()`, but it is just another way of going down the good old [callback hell](http://callbackhell.com/) :worried:.
 
 ## How to use
-- Simply **copy and paste** the [`SeleniumEngine` `const`ant](./src/SeleniumEngine.js) into your code and use :smile:
-- In your **HTML file**, by using a **CDN**:
-  - [JSDelivr](https://www.jsdelivr.com/package/npm/selenium-engine-js)
-	```html
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/selenium-engine-js/src/SeleniumEngine.js"></script>
-	```
+### Browser
+#### In your **HTML file**, by using a **CDN**
+- [JSDelivr](https://www.jsdelivr.com/package/npm/selenium-engine-js) (_preferred_):
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/selenium-engine-js/src/SeleniumEngine.min.js"></script>
+```
 
-  - [UnPkg](https://unpkg.com/selenium-engine-js/src/SeleniumEngine.js)
-	```html
-	<script type="text/javascript" src="https://unpkg.com/selenium-engine-js/src/SeleniumEngine.js"></script>
-	```
+- [UnPkg](https://unpkg.com/selenium-engine-js):
+```html
+<script type="text/javascript" src="https://unpkg.com/selenium-engine-js/src/SeleniumEngine.js"></script>
+```
 
-- **Include** directly the file (so that updates will be reflected on your code):
-    - _Javascript_ (`eval`): 
-	```javascript
-	fetch("https://raw.githubusercontent.com/LukeSavefrogs/SeleniumEngineJS/main/src/SeleniumEngine.js").then(data => data.text()).then(body => eval(body))
-	```
+#### **Javascript**
+- using `import` (_preferred_): 
+```javascript
+(async () => {
+	// ...
+	await import("https://cdn.jsdelivr.net/npm/selenium-engine-js/src/SeleniumEngine.min.js");
+	// ...
+})()
+```
 
-    - _Javascript_ (`import`): 
-	```javascript
-	(async () => {
-		// ...
-		await import("https://raw.githubusercontent.com/LukeSavefrogs/SeleniumEngineJS/main/src/SeleniumEngine.js")
-		// ...
-	})()
-	```
+- using `eval`: 
+```javascript
+fetch("https://cdn.jsdelivr.net/npm/selenium-engine-js/src/SeleniumEngine.min.js")
+	.then(data => data.text())
+	.then(body => eval(body));
+```
 
-	
-    -  _NodeJS_ (CJS)
-	```javascript
-	const SeleniumEngine = require("selenium-engine-js");
-	```
+### NodeJS
+-  _NodeJS_ (CJS)
+```javascript
+const SeleniumEngine = require("selenium-engine-js");
+```
 
-    -  _NodeJS_ (ESModules):
-	```javascript
-	import SeleniumEngine from "selenium-engine-js";
-	```
-
+-  _NodeJS_ (ESModules):
+```javascript
+import SeleniumEngine from "selenium-engine-js";
+```
 
 > ### Important
 > All the methods MUST be used inside an **`async`** function, as for the examples below (or using `Promise.then()`, which, again, is discouraged since it kinda destroys the whole concept behind this project).
