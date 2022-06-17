@@ -44,6 +44,12 @@ fetch("https://cdn.jsdelivr.net/npm/selenium-engine-js/src/SeleniumEngine.min.js
 ```
 
 ### NodeJS
+#### Install
+```
+npm install selenium-engine-js
+```
+
+#### Use in your code
 -  _NodeJS_ (CJS)
 ```javascript
 const SeleniumEngine = require("selenium-engine-js");
