@@ -33,6 +33,6 @@
   "devDependencies": {
     "np": "^6.5.0",
     "ava": "^4.0.1",
-    "puppeteer": "13.7.0"
+    "puppeteer": "14.4.1"
   }
 }
